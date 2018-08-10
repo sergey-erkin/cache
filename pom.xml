@@ -6,7 +6,7 @@
 
   <groupId>serkin</groupId>
   <artifactId>cache</artifactId>
-  <version>0.1-SNAPSHOT</version>
+  <version>0.1</version>
   <description>
     Configurable two-level cache (for caching Objects).
     Level 1 is memory, level 2 is filesystem.
@@ -14,7 +14,7 @@
   </description>
 
   <build>
-    <outputDirectory>target/main/classes/${project.build.finalName}</outputDirectory>
+    <outputDirectory>target/main/classes</outputDirectory>
     <testOutputDirectory>target/test</testOutputDirectory>
 
     <plugins>
@@ -27,6 +27,16 @@
         <configuration>
           <source>1.8</source>
           <target>1.8</target>
+        </configuration>
+      </plugin>
+
+      <!-- Compiler -->
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-jar-plugin</artifactId>
+        <version>3.1.0</version>
+        <configuration>
+          <classesDirectory>target/main/classes</classesDirectory>
         </configuration>
       </plugin>
 
